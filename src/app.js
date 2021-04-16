@@ -18,28 +18,18 @@ let Numeros = [
   "K"
 ];
 let Cartas = [
-  { Simbolo: "Pica", color: "black", simbol: "♠" },
-  { Simbolo: "Corazon", color: "Red", simbol: "♥" },
-  { Simbolo: "Trebol", color: "black", simbol: "♣" },
-  { Simbolo: "Diamante", color: "Red", simbol: "♦" }
+  { color: "black", simbolo: "♠" },
+  { color: "Red", simbolo: "♥" },
+  { color: "black", simbolo: "♣" },
+  { color: "Red", simbolo: "♦" }
 ];
 
-let DOCticon = document.getElementById("t-icon");
-let DOCnumber = document.getElementById("number");
-let DOCbicon = document.getElementById("b-icon");
+const Numero = Numeros[Math.floor(Math.random() * 13)];
+const Carta = Cartas[Math.floor(Math.random() * 4)];
 
-document.getElementById("t-icon").innerText("Hola");
-
-//aux.style.background = "blue";
-
-const Carta = () => {
-  return Math.floor(Math.random() * 4);
-};
-const Numero = () => {
-  return Math.floor(Math.random() * 13);
-};
-
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+document.getElementById("t-icon").innerHTML = Carta.simbolo;
+document.getElementById("t-icon").style.color = Carta.color;
+document.getElementById("number").innerHTML = Numero;
+document.getElementById("number").style.color = Carta.color;
+document.getElementById("b-icon").innerHTML = Carta.simbolo;
+document.getElementById("b-icon").style.color = Carta.color;
